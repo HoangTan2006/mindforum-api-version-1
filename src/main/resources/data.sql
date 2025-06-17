@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS mind_forum;
-USE mind_forum;
+--CREATE DATABASE IF NOT EXISTS mind_forum;
+--USE mind_forum;
 
 CREATE TABLE `users` (
     `id` BIGINT PRIMARY KEY AUTO_INCREMENT,
@@ -63,3 +63,6 @@ CREATE TABLE `answers` (
     FOREIGN KEY (`question_id`) REFERENCES `questions`(`id`) ON DELETE CASCADE,
     FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON DELETE CASCADE
 );
+
+INSERT INTO roles (role_name) VALUES ('USER');
+INSERT INTO roles (role_name) VALUES ('ADMIN');

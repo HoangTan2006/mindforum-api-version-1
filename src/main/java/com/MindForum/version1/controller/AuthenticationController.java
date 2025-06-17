@@ -17,7 +17,7 @@ import java.time.Instant;
 public class AuthenticationController {
     private final AuthenticationService authenticationService;
 
-    @PostMapping("/login")
+    @PostMapping("/sign-in")
     @ResponseStatus(HttpStatus.OK)
     public ResponseApi<AuthenticationResponse> authenticate(@RequestBody AuthenticationRequest authenticationRequest) {
         AuthenticationResponse authenticationResponse = authenticationService.authenticate(authenticationRequest);
@@ -30,7 +30,7 @@ public class AuthenticationController {
                 .build();
     }
 
-    @PostMapping("/sign-in")
+    @PostMapping("/sign-up")
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseApi<Void> createUser(@RequestBody CreateUserRequest createUserRequest) {
         authenticationService.createUser(createUserRequest);

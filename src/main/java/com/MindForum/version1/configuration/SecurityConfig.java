@@ -32,11 +32,15 @@ public class SecurityConfig {
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
 
     private final String[] WHITE_LIST = {
+            "/api/v1/auth/sign-up",
             "/api/v1/auth/sign-in",
-            "/api/v1/auth/login",
             "/api/v1/auth/forgot-password",
             "/api/v1/auth/verify-code",
-            "/api/v1/auth/reset-password"
+            "/api/v1/auth/reset-password",
+            //Swagger
+            "/v3/api-docs",
+            "/swagger-ui/**",
+            "v3/api-docs/swagger-config"
     };
 
     @Bean
